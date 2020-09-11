@@ -1,0 +1,72 @@
+<%- include('header.ejs')%>
+
+
+<div class="container">
+    <div class="row mt-5">
+
+        <!-- btn volver -->
+        <div>
+            <a href="/" class="btn btn-secondary" > Back </a>
+        </div>
+
+        <!-- tabla -->
+        <table class="table table-bordered mt-5">
+
+            <thead>
+                <th>Item</th>
+                <th>Precio unitario</th>
+                <th>Peso</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </thead>
+
+            <tbody>
+
+                <!-- pera -->
+               <tr>
+
+                   <td> <%= verduras.pera.nombre  %> </td>
+                   <td> $ <%= verduras.pera.precio  %> </td>
+                   <td> <%= verduras.pera.peso  %> grs.</td>
+                   
+                   
+                    <%  if(datos.cantidad[0] == 0 ) { %> <td>0</td>  <% } %>
+                    <%  if(datos.cantidad[0] != 0 ) { %>  <td> <%= datos.cantidad[0] %> </td>  <% } %>
+                
+
+                   <td> $ <%= datos.cantidad[0] * verduras.pera.precio  %> </td>
+               </tr>
+
+               <!-- morron -->
+               <tr>
+                <td> <%= verduras.morron.nombre  %> </td>
+                <td> $ <%= verduras.morron.precio  %> </td>
+                <td> <%= verduras.morron.peso  %> grs.</td>
+
+                <!-- <td> <%= datos.cantidad[1] %> </td> -->
+
+                 
+                    
+                <%  if(datos.cantidad[1] == 0 ) {%>
+                    <td> 0 </td>
+                <% } %>
+
+                <%  if(datos.cantidad[1] != 0 ) {%>
+                    <td> <%= datos.cantidad[1] %> </td>
+                <% } %>
+
+
+                <td> $ <%= datos.cantidad[1] * verduras.morron.precio  %> </td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+        
+
+    </div>
+</div>
+
+
+<%- include('footer.ejs')%>
