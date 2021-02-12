@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <table>
+        <thead>
+            <th>Raza</th>
+            <th>Tamaño</th>
+        </thead>
+        <tbody>
+            <% for(let i=0; i<perros.length; i++){ %>
+                <tr>
+                    <td style="border: solid 1px">
+                        <%= perros[i].raza %>
+                    </td>
+                    <td style="border: solid 1px">
+                        <%= perros[i].tamano %>
+                    </td>
+                </tr>
+
+            <% } %>
+        </tbody>
+    </table>
+
+<br><br><br>
+<hr>
+<br><br>
+
+    <form action="/add" method="POST">
+   
+            <input type="text" placeholder="Raza" name="raza">
+            <input type="text" placeholder="tamaño" name="tamano">
+            <input type="submit" value="guardar">
+   
+    </form>
+
+</body>
+</html>
