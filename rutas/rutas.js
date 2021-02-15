@@ -9,8 +9,7 @@ const Perro = require('../models/perro');
 // })
 
 rutas.get('/', (req, res) => {
-
-    res.send('OK');
+    res.render('home');
 })
 
 rutas.post('/add', async (req, res, next) => {
