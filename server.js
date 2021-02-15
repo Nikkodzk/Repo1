@@ -1,17 +1,20 @@
 const express = require('express');
 const app = express();
-const rutas = require('./rutas/rutas');
-const mongoose = require('mongoose');
-const engine = require('ejs-mate');
+// const rutas = require('./rutas/rutas');
+// const mongoose = require('mongoose');
+// const engine = require('ejs-mate');
 
 // setting
 app.set('port', process.env.port || 1313);
-app.engine('ejs',engine);
-app.set('view engine','ejs');
+// app.engine('ejs',engine);
+// app.set('view engine','ejs');
 
 // rutas
-app.use(express.urlencoded({extended:false}));  //JSON
-app.use('/', rutas );
+// app.use(express.urlencoded({extended:false}));  //JSON
+// app.use('/', rutas );
+app.get('/', (req, res) => {
+  res.send('ok');
+})
 
 // mongoose
 // mongoose.connect('mongodb://localhost:27017/perros', {

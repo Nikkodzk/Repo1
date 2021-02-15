@@ -3,14 +3,14 @@ const rutas = express.Router();
 const Perro = require('../models/perro');
 
 
-// rutas.get('/', async (req, res) => {
-//     const perros = await Perro.find();
-//     res.render('index', { perros });
-// })
-
-rutas.get('/', (req, res) => {
-    res.render('home');
+rutas.get('/', async (req, res) => {
+    const perros = await Perro.find();
+    res.render('index', { perros });
 })
+
+// rutas.get('/', (req, res) => {
+//     res.render('home');
+// })
 
 rutas.post('/add', async (req, res, next) => {
 
